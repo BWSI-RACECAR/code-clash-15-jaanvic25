@@ -39,10 +39,8 @@ class Solution:
     def interval_scheduling(self, intervals):
             ints = []
             intervals.sort()
-            for i in range(intervals -1):
+            for i in range(len(intervals) -1):
                 if intervals[i][1] <= intervals[i+1][0]:
-                    hours += intervals[i][1] - intervals[i][0] 
-                    hours += intervals[i +1][1] - intervals[i+1][0] 
                     ints.append(intervals[i], intervals[i+1])
                     i+=1
             return ints
