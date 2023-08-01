@@ -43,7 +43,7 @@ class Solution:
             for i in intervals:
                 start = i[0]
                 end = i[1]
-                if start > prev:
+                if start >= prev:
                     ints.append(i)
                     prev = end
             return ints
