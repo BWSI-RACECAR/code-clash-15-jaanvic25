@@ -38,15 +38,15 @@ Select all three (1, 2), (2, 3) and (3, 4) as those are all compatible events an
 class Solution:
     def interval_scheduling(self, intervals):
             ints = []
-            intervals.sort()
-            for i in range(len(intervals) -1):
-                if intervals[i][1] <= intervals[i+1][0]:
-                    ints.append(intervals[i])
-                    ints.append(intervals[i+1])
-                    i+=1
+            intervals = sorted(intervals)
+            prev = 0
+            for i in intervals:
+                start = i[0]
+                end = i[1]
+                if start > prev:
+                    ints.append(i)
+                    prev = end
             return ints
-            #type intervals: list of int tuples
-            #return type: list of int tuples
             
             #TODO: Write code below to return an int tuples list with the solution to the prompt.
             
