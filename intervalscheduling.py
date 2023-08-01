@@ -41,7 +41,8 @@ class Solution:
             intervals.sort()
             for i in range(len(intervals) -1):
                 if intervals[i][1] <= intervals[i+1][0]:
-                    ints.append(intervals[i], intervals[i+1])
+                    ints.append(intervals[i])
+                    ints.append(intervals[i+1])
                     i+=1
             return ints
             #type intervals: list of int tuples
