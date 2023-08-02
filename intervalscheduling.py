@@ -38,7 +38,7 @@ Select all three (1, 2), (2, 3) and (3, 4) as those are all compatible events an
 class Solution:
     def interval_scheduling(self, intervals):
         intervals = sorted(intervals, key = lambda x: x[1])
-        nts = []
+        ints = []
         prev = 0
         for i in intervals:
             start = i[0]
